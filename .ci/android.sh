@@ -50,7 +50,7 @@ cmake -S . -B build \
   -D CMAKE_CXX_COMPILER_LAUNCHER=ccache \
   -D CMAKE_CXX_COMPILER=$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android28-clang++ \
   -D CMAKE_C_COMPILER=$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android28-clang \
-  -D CMAKE_CXX_FLAGS="-O3 -march=atom -mtune=sandybridge -msse4.1 -msse4.2 -pipe " \
+  -D CMAKE_CXX_FLAGS="-O3 -march=atom -mtune=sandybridge -msse4.1 -pipe " \
   -D CMAKE_EXE_LINKER_FLAGS=-flto=thin \
   -D CMAKE_SHARED_LINKER_FLAGS=-flto=thin \
   -D ANDROID_PLATFORM=28 \
