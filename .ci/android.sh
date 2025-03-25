@@ -22,8 +22,8 @@ cmake -S . -B build \
   -D CMAKE_CXX_COMPILER=$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android28-clang++ \
   -D CMAKE_C_COMPILER=$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android28-clang \
   -D CMAKE_CXX_FLAGS="-O3 -march=armv8-a+simd -mtune=cortex-a715 -flto -funroll-loops -pipe" \
-  -D CMAKE_EXE_LINKER_FLAGS=-flto=thin -Wl,--gc-sections -Wl,--icf=all -Wl,--strip-debug \
-  -D CMAKE_SHARED_LINKER_FLAGS=-flto=thin -Wl,--gc-sections -Wl,--icf=all -Wl,--strip-debug \
+  -D CMAKE_EXE_LINKER_FLAGS="-flto=thin -Wl,--gc-sections -Wl,--icf=all -Wl,--strip-debug" \
+  -D CMAKE_SHARED_LINKER_FLAGS="-flto=thin -Wl,--gc-sections -Wl,--icf=all -Wl,--strip-debug" \
   -D ANDROID_PLATFORM=28 \
   -D CMAKE_ANDROID_ARCH_ABI=arm64-v8a \
   -D CMAKE_ANDROID_STL_TYPE=c++_static \
