@@ -8,7 +8,7 @@ cmake .. -G Ninja \
     -DCMAKE_CXX_COMPILER_LAUNCHER=ccache \
     -DCMAKE_CXX_FLAGS="-O3 -lstdc++ -flto -funroll-loops -pipe" \
     -DCMAKE_C_FLAGS="-O3 -lstdc++ -flto -funroll-loops -pipe" \
-    -DENABLE_LTO=ON \
+    -DENABLE_LTO=OFF \
     -DENABLE_TESTS=ON \
     -DENABLE_QT_TRANSLATION=ON \
     -DUSE_SYSTEM_BOOST=OFF \
