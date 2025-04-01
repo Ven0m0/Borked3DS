@@ -106,7 +106,7 @@ jobs:
           name: ${{ env.OS }}-${{ env.TARGET }}
           path: artifacts/
   android:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     env:
       CCACHE_DIR: ${{ github.workspace }}/.ccache
       CCACHE_COMPILERCHECK: content
@@ -134,9 +134,11 @@ jobs:
           fi
           echo $GIT_TAG_NAME
       - name: Update deb repositories 
-        run: sudo apt-get update 
+        run: sudo apt-get update && sudo apt-get upgrade
       - name: Install New Packages
         run: sudo apt-get -y install zip unzip python3 ccache apksigner && sudo apt-get clean
+      - name: Cleanup
+        run: sudo apt clean && sudo apt autoclean && sudo apt autoremove -y
       - name: Get latest CMake and Ninja
         uses: lukka/get-cmake@latest
       - name: Graalvm JDK 23
