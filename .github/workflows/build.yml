@@ -141,6 +141,9 @@ jobs:
         run: sudo apt clean && sudo apt autoclean && sudo apt autoremove -y
       - name: Get latest CMake and Ninja
         uses: lukka/get-cmake@latest
+        with:
+          cmakeVersion: 3.30.6
+          ninjaVersion: latest
       - name: Graalvm JDK 23
         uses: graalvm/setup-graalvm@v1
         with:
