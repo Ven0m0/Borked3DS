@@ -80,10 +80,10 @@ android {
                 arguments(
                     "-DENABLE_QT=0", // Don't use QT
                     "-DENABLE_SDL2=0", // Don't use SDL
-                    "-DCMAKE_CXX_FLAGS=-O3",
-                    "-DCMAKE_C_FLAGS=-O3",
-                    "-DCMAKE_EXE_LINKER_FLAGS=-flto=thin",    // Enable Thin LTO
-                    "-DCMAKE_SHARED_LINKER_FLAGS=-flto=thin", // Enable Thin LTO
+                    "-DCMAKE_CXX_FLAGS=-O3 -march=armv8-a+simd -mtune=cortex-a715 -funroll-loops -pipe",
+                    "-DCMAKE_C_FLAGS=-O3 -march=armv8-a+simd -mtune=cortex-a715 -funroll-loops -pipe",
+                    "-DCMAKE_EXE_LINKER_FLAGS=-flto=thin -Wl,--gc-sections -Wl,--icf=all -Wl,--strip-debug",    // Enable Thin LTO
+                    "-DCMAKE_SHARED_LINKER_FLAGS=-flto=thin -Wl,--gc-sections -Wl,--icf=all -Wl,--strip-debug", // Enable Thin LTO
                     "-DANDROID_ARM_NEON=true", // cryptopp requires Neon to work
                     "-DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON", // Support Android V 16KiB page sizes
                     "-DUSE_SYSTEM_BOOST=OFF",
